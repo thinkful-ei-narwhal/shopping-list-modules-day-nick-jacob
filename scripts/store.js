@@ -18,7 +18,7 @@ export default {
   },
   findAndToggleChecked: function (id) {
     const item = this.findById(id);
-    item.checked = false;
+    item.checked = !item.checked;
   },
   findAndUpdateName: function (id, newName) {
     try {
@@ -33,6 +33,11 @@ export default {
     const item = this.findById(id);
     const itemIndex = this.items.indexOf(item);
     this.items.splice(itemIndex, 1);
+  },
+
+  toggleCheckedFilter: function () {
+    this.hideCheckedItems = !this.hideCheckedItems;
   }
+  
 };
 
